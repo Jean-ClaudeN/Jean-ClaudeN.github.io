@@ -1,454 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jean Claude Niyomugabo — AI in Agriculture</title>
-  <meta name="description" content="Jean Claude Niyomugabo is a Graduate Research Assistant at the University of Nebraska–Lincoln working at the intersection of AI, agriculture, food systems, and responsible technology adoption." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jean Claude Niyomugabo | Agricultural Systems and AI Adoption</title>
+<meta name="description" content="Jean Claude Niyomugabo, graduate student at the University of Nebraska–Lincoln. Research on farmer trust and adoption of AI-enabled agricultural tools. Open to industry roles and PhD positions starting 2027.">
+<meta property="og:title" content="Jean Claude Niyomugabo">
+<meta property="og:description" content="Agricultural AI only works when farmers trust it.">
+<meta property="og:type" content="profile">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single-column academic page, wide hero with portrait, photo strip, filterable CV list */
+:root{
+  --bg:#f5f7f3; --surface:#ffffff; --fg:#14211c; --muted:#56655e; --rule:#d9e0d9;
+  --accent:#2c6a4c; --accent-fg:#ffffff; --soil:#b07a2a; --chip:#e8eee8;
+  --display:"Newsreader",Georgia,serif; --body:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1714; --surface:#16211c; --fg:#e7eee9; --muted:#9aaba2; --rule:#27352e;
+  --accent:#7cc3a0; --accent-fg:#0f1714; --soil:#d9a64e; --chip:#1d2b25; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1714; --surface:#16211c; --fg:#e7eee9; --muted:#9aaba2; --rule:#27352e;
+  --accent:#7cc3a0; --accent-fg:#0f1714; --soil:#d9a64e; --chip:#1d2b25; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+a{color:var(--accent);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+.wrap{max-width:980px;margin:0 auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule);
+  margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.bar{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--fg);text-decoration:none}
+nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+nav a{font-size:.9rem;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:6px}
+nav a:hover{color:var(--fg)}
+nav a.on{color:var(--accent);background:var(--chip)}
+#theme{background:none;border:1px solid var(--rule);color:var(--fg);border-radius:6px;padding:5px 10px;font:inherit;font-size:.85rem;cursor:pointer}
+#theme:hover{border-color:var(--accent)}
+
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding-block:56px 48px}
+.eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soil);font-weight:600;margin:0 0 14px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.2rem)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lead{font-size:1.1rem;color:var(--muted);margin:18px 0 26px;max-width:52ch}
+.role{margin:0 0 6px;font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:500;font-size:.95rem}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:var(--chip);filter:none}
+
+.photo{position:relative;border-radius:14px;overflow:hidden;background:var(--chip);border:1px solid var(--rule);cursor:pointer;padding:0;display:block;width:100%}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo .tag{position:absolute;left:10px;bottom:10px;background:rgba(10,18,14,.72);color:#fff;font-size:.74rem;padding:4px 9px;border-radius:99px;letter-spacing:.02em}
+.photo:hover .tag{background:rgba(10,18,14,.9)}
+.portrait{aspect-ratio:4/5;max-width:100%}
+.open{display:flex;align-items:center;gap:10px;margin:22px 0 0;font-size:.92rem;color:var(--muted)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--chip)}
+
+.featured{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;padding:18px 0;color:var(--muted);font-family:var(--display);font-size:1.02rem;font-weight:500}
+.featured .fl{font-family:var(--body);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soil);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-block:1px solid var(--rule);margin-bottom:8px}
+.fact{padding:18px 16px;border-left:1px solid var(--rule)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font-family:var(--display);font-size:1.7rem;font-weight:600;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.fact span{font-size:.85rem;color:var(--muted)}
+
+section{padding-block:52px 8px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+h2{font-size:1.9rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.cols>*{min-width:0}
+p{margin:0 0 14px}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
+.timeline li{position:relative;padding:0 0 18px 20px}
+.timeline li::before{content:"";position:absolute;left:-6px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{display:block;font-weight:600}
+.timeline span{font-size:.88rem;color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:22px;min-width:0;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.96rem;margin:0 0 10px}
+.pill{display:inline-block;font-size:.74rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:99px;background:var(--chip);color:var(--soil);margin-bottom:12px}
+
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal .photo{aspect-ratio:4/3;cursor:zoom-in;transition:transform .2s}
+.gal .photo:hover{transform:translateY(-3px)}
+.gal .photo[hidden]{display:none}
+.hint{margin-top:18px;text-align:center}
+
+.panel{margin-top:22px}
+.panel h3{font-family:var(--body);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soil);font-weight:600;margin:30px 0 4px}
+.panel>h3:first-child{margin-top:0}
+.ent{padding:16px 0;border-bottom:1px solid var(--rule)}
+.et{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap}
+.et>div{min-width:0;flex:1 1 320px}
+.ed{color:var(--muted);font-size:.9rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ent ul{margin:8px 0 0;padding-left:20px}
+.ent li{margin:0 0 6px;font-size:.96rem}
+.ex{margin:6px 0 0;font-size:.95rem;color:var(--muted)}
+.plain2{list-style:none;margin:0;padding:0}
+.plain2 li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:.96rem}
+.chip[role="tab"][aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.86rem;padding:6px 14px;border-radius:99px;border:1px solid var(--rule);background:transparent;color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:0}
+.item{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--rule)}
+.item:last-child{border-bottom:1px solid var(--rule)}
+.item>*{min-width:0}
+.item .kind{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soil);font-weight:600;padding-top:4px}
+.item p{margin:0;font-size:.97rem}
+.item small{display:block;color:var(--muted);margin-top:2px;font-size:.86rem}
+
+.contact{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:30px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.contact h2{font-size:1.6rem;margin-bottom:6px}
+.mail{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;background:var(--chip);padding:6px 10px;border-radius:6px;user-select:all;overflow-wrap:anywhere}
+footer{padding-block:36px 48px;color:var(--muted);font-size:.85rem}
+
+.lb{position:fixed;inset:0;background:rgba(5,10,8,.88);display:flex;align-items:center;justify-content:center;z-index:40;padding:24px}
+.lb img{max-width:100%;max-height:100%;border-radius:10px}
+.lb button{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;background:#fff;color:#111;border:0;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+
+.rise{transform:translateY(14px);transition:transform .6s ease}
+.rise.in{transform:none}
+@media (prefers-reduced-motion:reduce){.rise{transform:none;transition:none}.card{transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-top:36px}
+  .portrait{max-width:340px}
+  .cols{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){border-left:0;padding-left:0}
+  .fact{border-top:0}
+  .gal{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:1fr;gap:4px}
+  nav a{padding:6px 7px}
+}
+</style>
 </head>
 <body>
 
-  <!-- ══ NAV ══ -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="#top" class="brand">JCN</a>
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#awards">Awards</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="nav-cta" href="mailto:jclniyomugabo@gmail.com">Get in touch</a>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#top">Jean Claude Niyomugabo</a>
+    <nav aria-label="Sections">
+      <a href="#bring">Strengths</a>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#photos">Photos</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Jean Claude Niyomugabo</p>
+      <h1>Agricultural AI only works when farmers <em>trust it.</em></h1>
+      <p class="role" style="margin-top:18px">Graduate researcher and builder, agricultural systems and AI adoption</p>
+      <p class="role" style="color:var(--muted);font-weight:400">M.S. candidate, Biological Systems Engineering, University of Nebraska–Lincoln</p>
+      <p class="lead">I research why farmers adopt or reject AI tools, and I build and field-test the tools themselves. I bring years of work with farmer cooperatives in Africa and current research with producers across the U.S. Midwest.</p>
+      <div class="btns">
+        <a class="btn" href="assets/Jean_Claude_Niyomugabo_CV.pdf">Download CV</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <p class="open"><span class="dot"></span>Open to industry roles and PhD positions starting 2027</p>
     </div>
-  </header>
+    <div class="photo portrait"><img id="portrait" alt="Jean Claude Niyomugabo"></div>
+  </div>
 
-  <main id="top">
+  <div class="facts rise">
+    <div class="fact"><b>15</b><span>urban farms in irrigation research</span></div>
+    <div class="fact"><b>11</b><span>Midwestern states in thesis research</span></div>
+    <div class="fact"><b>2</b><span>continents of hands-on work: Africa and North America</span></div>
+    <div class="fact"><b>May 2027</b><span>expected M.S. completion</span></div>
+  </div>
 
-    <!-- ══ HERO ══ -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-noise"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="container hero-layout">
+  <div class="featured rise">
+    <span class="fl">Affiliated with</span>
+    <span>University of Nebraska–Lincoln</span><span>USDA-NIFA Cultivate ACCESS</span><span>NU AI Institute</span><span>PRAIRIE Initiative</span><span>Watson Institute</span><span>Black in AI</span><span>FAO</span><span>Agriterra</span>
+  </div>
 
-        <div class="hero-meta">
-          <span class="badge">Graduate Research Assistant</span>
-          <span class="badge badge-outline">University of Nebraska–Lincoln</span>
-        </div>
+  <div class="featured rise">
+    <span class="fl">Spoken at</span>
+    <span>Youth Connekt Africa Summit 2024</span><span>Africa Food Systems Forum 2024</span><span>AYuTe NextGen</span><span>PRAIRIE Initiative launch</span><span>NU System Graduate College Workshop</span>
+  </div>
 
-        <h1 id="hero-heading" class="hero-heading">
-          Bridging AI,<br />
-          <em>Agriculture,</em><br />
-          and People.
-        </h1>
-
-        <p class="hero-sub">
-          I study how farmers understand, trust, and adopt AI-enabled agricultural tools —
-          combining systems research, communication, and a deep belief in responsible technology integration.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#research">View research</a>
-          <a class="btn btn-ghost" href="#contact">Connect with me</a>
-        </div>
-
-        <div class="hero-stats" aria-label="Quick facts">
-          <div class="stat">
-            <span class="stat-num">5+</span>
-            <span class="stat-label">International<br />recognitions</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat">
-            <span class="stat-num">2+</span>
-            <span class="stat-label">Continents of<br />experience</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat">
-            <span class="stat-num">AI</span>
-            <span class="stat-label">Agriculture &amp;<br />food systems</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="hero-profile-col" aria-hidden="true">
-        <div class="profile-ring">
-          <div class="profile-avatar">JCN</div>
-        </div>
-        <div class="profile-info">
-          <p class="profile-name">Jean Claude Niyomugabo</p>
-          <p class="profile-title">Researcher · Communicator · Leader</p>
-          <ul class="profile-details">
-            <li>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
-              <a href="mailto:jclniyomugabo@gmail.com">jclniyomugabo@gmail.com</a>
-            </li>
-            <li>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <a href="tel:+250785315789">+250 785 315 789</a>
-            </li>
-            <li>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Kigali, Rwanda · Lincoln, Nebraska</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ══ ABOUT ══ -->
-    <section id="about" class="section" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="section-label" aria-hidden="true">01 — About</div>
-        <div class="about-grid">
-          <div class="about-lead">
-            <h2 id="about-heading">Research, communication,<br /><em>and human connection.</em></h2>
-          </div>
-          <div class="about-body">
-            <p>
-              I am a Graduate Research Assistant in the Department of Biological Systems Engineering at the
-              University of Nebraska–Lincoln, where my work sits at the intersection of agricultural systems,
-              digital technology, and human behavior. I focus specifically on how farmers perceive, evaluate,
-              and decide whether to adopt AI-enabled agricultural tools — a question that is as much about
-              trust and communication as it is about technology.
-            </p>
-            <p>
-              Alongside my academic work, I have built experience across youth entrepreneurship, international
-              agricultural communication, and digital strategy — supporting organizations including Generation
-              Unlimited, FAO Rwanda, and Agriterra. I co-founded Agirite, a youth-led platform connecting
-              rural farmers to knowledge, markets, and opportunity.
-            </p>
-            <p>
-              I believe that responsible innovation in agriculture requires listening to farmers as carefully
-              as it requires building better tools. That conviction shapes everything I do.
-            </p>
-            <div class="about-tags" role="list" aria-label="Core areas">
-              <span role="listitem">AI in Agriculture</span>
-              <span role="listitem">Farmer Trust &amp; Adoption</span>
-              <span role="listitem">Digital Communication</span>
-              <span role="listitem">Youth Engagement</span>
-              <span role="listitem">Food Systems</span>
-              <span role="listitem">Responsible Innovation</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ EXPERIENCE ══ -->
-    <section id="experience" class="section section-alt" aria-labelledby="experience-heading">
-      <div class="container">
-        <div class="section-label" aria-hidden="true">02 — Experience</div>
-        <h2 id="experience-heading">Selected roles<br /><em>and leadership.</em></h2>
-
-        <ol class="timeline" reversed>
-
-          <li class="timeline-entry">
-            <div class="t-marker" aria-hidden="true"></div>
-            <div class="t-meta">
-              <span class="t-period">2025 – Present</span>
-              <span class="t-org">University of Nebraska–Lincoln</span>
-            </div>
-            <div class="t-card">
-              <h3>Graduate Research Assistant</h3>
-              <p class="t-dept">Department of Biological Systems Engineering</p>
-              <p>
-                Conducting graduate research on farmer perceptions, trust, and adoption of AI-enabled decision
-                support tools in Nebraska maize and soybean systems. Combines survey methods, qualitative
-                interviews, and agricultural communication analysis to understand responsible AI integration
-                at the farm level.
-              </p>
-            </div>
-          </li>
-
-          <li class="timeline-entry">
-            <div class="t-marker" aria-hidden="true"></div>
-            <div class="t-meta">
-              <span class="t-period">2024 – Present</span>
-              <span class="t-org">Generation Unlimited</span>
-            </div>
-            <div class="t-card">
-              <h3>Youth Entrepreneurship Intern</h3>
-              <p class="t-dept">Youth Advisory &amp; Innovation</p>
-              <p>
-                Contributing to youth advisory engagement, entrepreneurship initiatives, and discussions
-                around grants, systems change, and innovation strategy. Supporting youth-centered programs
-                that connect learning, leadership, and practical economic opportunity.
-              </p>
-            </div>
-          </li>
-
-          <li class="timeline-entry">
-            <div class="t-marker" aria-hidden="true"></div>
-            <div class="t-meta">
-              <span class="t-period">2024 – Present</span>
-              <span class="t-org">Agriterra</span>
-            </div>
-            <div class="t-card">
-              <h3>Communication &amp; Business Development Specialist</h3>
-              <p class="t-dept">Agricultural Cooperatives, Rwanda</p>
-              <p>
-                Developed communication strategies and documented field impact for agricultural cooperatives
-                and farmer-centered programs. Strengthened stakeholder engagement and increased program
-                visibility through digital storytelling and strategic outreach.
-              </p>
-            </div>
-          </li>
-
-          <li class="timeline-entry">
-            <div class="t-marker" aria-hidden="true"></div>
-            <div class="t-meta">
-              <span class="t-period">2023 – 2024</span>
-              <span class="t-org">FAO Rwanda</span>
-            </div>
-            <div class="t-card">
-              <h3>Youth Engagement &amp; Project Promoter</h3>
-              <p class="t-dept">Food and Agriculture Organization — Rwanda</p>
-              <p>
-                Interpreted speeches, supported field researchers, and promoted agricultural development
-                initiatives focused on agribusiness, youth inclusion, and sustainable food systems. Contributed
-                to communication linking global agendas to local farming realities.
-              </p>
-            </div>
-          </li>
-
-          <li class="timeline-entry">
-            <div class="t-marker" aria-hidden="true"></div>
-            <div class="t-meta">
-              <span class="t-period">Co-founder</span>
-              <span class="t-org">Agirite</span>
-            </div>
-            <div class="t-card">
-              <h3>Co-founder</h3>
-              <p class="t-dept">Youth-led Social Enterprise</p>
-              <p>
-                Co-founded a digital platform for rural youth and women focused on agricultural education,
-                direct market access, and community connection. Led content, coordination, and growth that
-                reached large online audiences and connected smallholder farmers to knowledge and markets
-                they would not otherwise have accessed.
-              </p>
-            </div>
-          </li>
-
-        </ol>
-      </div>
-    </section>
-
-    <!-- ══ RESEARCH ══ -->
-    <section id="research" class="section" aria-labelledby="research-heading">
-      <div class="container">
-        <div class="section-label" aria-hidden="true">03 — Research</div>
-        <h2 id="research-heading">Current academic<br /><em>focus.</em></h2>
-
-        <div class="research-grid">
-          <div class="research-main card-dark">
-            <div class="card-tag">Master's Research</div>
-            <h3>Farmer Trust and Responsible AI Adoption in Nebraska Crop Systems</h3>
-            <p>
-              My current research examines how farmers in Nebraska maize and soybean systems perceive and
-              evaluate AI-powered recommendation tools. The study investigates the roles of perceived value,
-              usability, data transparency, accuracy, and risk on farmers' willingness to adopt these tools —
-              with the goal of producing actionable insights for developers, extension specialists, and
-              policymakers who want AI integration to be both effective and responsible.
-            </p>
-            <p>
-              The work is grounded in social science methods including structured surveys and qualitative
-              interviews, and is being conducted under the guidance of faculty at the Department of
-              Biological Systems Engineering, University of Nebraska–Lincoln.
-            </p>
-          </div>
-
-          <div class="research-interests">
-            <div class="card-dark interest-card">
-              <div class="interest-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              </div>
-              <h4>Technology Adoption</h4>
-              <p>Farmer decision-making and barriers to adopting AI-enabled advisory tools in row-crop systems.</p>
-            </div>
-            <div class="card-dark interest-card">
-              <div class="interest-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-              </div>
-              <h4>Digital Agriculture Communication</h4>
-              <p>How emerging technologies are communicated to farming communities and understood in context.</p>
-            </div>
-            <div class="card-dark interest-card">
-              <div class="interest-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <h4>Responsible AI Integration</h4>
-              <p>Frameworks for ethical, transparent, and farmer-centred AI deployment in food and agricultural systems.</p>
-            </div>
-            <div class="card-dark interest-card">
-              <div class="interest-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-              <h4>Youth in Food Systems</h4>
-              <p>Engaging the next generation in sustainable agriculture, entrepreneurship, and innovation leadership.</p>
-            </div>
-          </div>
-        </div>
-
-        <blockquote class="research-quote">
-          <p>"Moving beyond performance claims means paying attention to context, trust, communication, access, and the lived experience of the farmers we are designing for."</p>
-          <cite>— Jean Claude Niyomugabo</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- ══ AWARDS ══ -->
-    <section id="awards" class="section section-alt" aria-labelledby="awards-heading">
-      <div class="container">
-        <div class="section-label" aria-hidden="true">04 — Recognition</div>
-        <h2 id="awards-heading">Awards &amp;<br /><em>honors.</em></h2>
-
-        <div class="awards-grid">
-
-          <article class="award-card award-featured">
-            <div class="award-year">2024</div>
-            <h3>Global Greengrants Fund Award</h3>
-            <p>$5,000 award recognising leadership in training smallholder farmers on sustainable agriculture and climate action strategies.</p>
-          </article>
-
-          <article class="award-card">
-            <div class="award-year">2024</div>
-            <h3>Global Citizen Award — Finalist</h3>
-            <p>Finalist in the Food System Hero category of the Global Citizen Award.</p>
-          </article>
-
-          <article class="award-card">
-            <div class="award-year">2023</div>
-            <h3>World Youth Development Recognition</h3>
-            <p>Recognised among the 100 Excellence Actions for Sustainable Development.</p>
-          </article>
-
-          <article class="award-card">
-            <div class="award-year">2022</div>
-            <h3>Most Influential Food Hero in Africa</h3>
-            <p>Recognised by Complete Farmer Magazine for contributions to agricultural knowledge and youth leadership across Africa.</p>
-          </article>
-
-          <article class="award-card">
-            <div class="award-year">2022</div>
-            <h3>Youth Agrichampion Award</h3>
-            <p>Recognised by the Ban Ki-Moon Center for Global Citizens for outstanding contributions to sustainable agriculture and youth development.</p>
-          </article>
-
-          <article class="award-card award-invite">
-            <div class="award-year">Ongoing</div>
-            <h3>International Platform Contributions</h3>
-            <p>Invited contributor to international agricultural, youth innovation, and digital agriculture platforms and convenings.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ EDUCATION ══ -->
-    <section id="education" class="section" aria-labelledby="education-heading">
-      <div class="container">
-        <div class="section-label" aria-hidden="true">05 — Education</div>
-        <h2 id="education-heading">Academic<br /><em>background.</em></h2>
-
-        <div class="edu-grid">
-          <article class="edu-card">
-            <div class="edu-logo" aria-hidden="true">UNL</div>
-            <div class="edu-info">
-              <h3>University of Nebraska–Lincoln</h3>
-              <p class="edu-degree">Master of Science — Agricultural Systems Technology</p>
-              <p class="edu-note">
-                Research focus: farmer trust and adoption of AI-enabled decision tools in Nebraska maize
-                and soybean systems. Department of Biological Systems Engineering.
-              </p>
-            </div>
-          </article>
-          <article class="edu-card">
-            <div class="edu-logo" aria-hidden="true">RICA</div>
-            <div class="edu-info">
-              <h3>Rwanda Institute for Conservation Agriculture</h3>
-              <p class="edu-degree">Undergraduate Training — Agriculture &amp; Applied Systems</p>
-              <p class="edu-note">
-                Practical and applied training in sustainable agriculture, conservation practices,
-                and rural systems development in Rwanda.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ CONTACT ══ -->
-    <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
-      <div class="hero-noise" aria-hidden="true"></div>
-      <div class="container contact-layout">
-        <div class="contact-text">
-          <div class="section-label light" aria-hidden="true">06 — Contact</div>
-          <h2 id="contact-heading">Let's work<br /><em>together.</em></h2>
-          <p>
-            I am open to research collaborations, speaking engagements, agricultural innovation projects,
-            youth programming, and conversations around responsible AI in food systems.
-            My inbox is always open.
-          </p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:jclniyomugabo@gmail.com">Email me</a>
-            <a class="btn btn-ghost-light" href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          </div>
-        </div>
-        <div class="contact-details" aria-label="Contact details">
-          <div class="contact-item">
-            <span class="contact-item-label">Email</span>
-            <a href="mailto:jclniyomugabo@gmail.com">jclniyomugabo@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-item-label">Phone</span>
-            <a href="tel:+250785315789">+250 785 315 789</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-item-label">Location</span>
-            <span>Kigali, Rwanda · Lincoln, Nebraska</span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-item-label">Institution</span>
-            <span>University of Nebraska–Lincoln</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ══ FOOTER ══ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© 2026 Jean Claude Niyomugabo</span>
-      <span>Graduate Research Assistant · University of Nebraska–Lincoln</span>
+  <section id="bring" class="rise">
+    <div class="sec-head"><h2>What I bring</h2></div>
+    <div class="cards">
+      <article class="card">
+        <h3>Research on trust and adoption</h3>
+        <p>My thesis research covers producers and agriculture students across eleven Midwestern states, using established adoption models. I know how to design the study, work with farm audiences, and turn the results into decisions for tool builders.</p>
+      </article>
+      <article class="card">
+        <h3>Field credibility</h3>
+        <p>I have worked directly with smallholder cooperatives and farmers on mechanization, irrigation and technology adoption, and I now run sensor-based irrigation research on 15 urban farms in Lincoln and Omaha.</p>
+      </article>
+      <article class="card">
+        <h3>Builder and connector</h3>
+        <p>I built the AgiriteChat advisory prototype, co-founded Agirite, and speak on AI in agriculture at university, industry and international forums, including a Google-backed fellowship cohort and Black in AI.</p>
+      </article>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Sticky nav shadow on scroll
-    const header = document.getElementById('site-header');
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
+  <section id="about" class="rise">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="cols">
+      <div>
+        <p>I am a graduate student and researcher at the University of Nebraska–Lincoln, advised by Dr. Santosh Pitla. My first degree is a B.Sc. in Conservation Agriculture, specializing in irrigation and mechanized agriculture, from the Rwanda Institute for Conservation Agriculture.</p>
+        <p>Before graduate school I worked with farmer cooperatives in Africa on technology adoption, mechanization and irrigation, and I co-founded Agirite, a social enterprise connecting smallholder farmers to markets, training and financial services.</p>
+        <p>I am a Graduate Research Assistant on the USDA-NIFA funded Cultivate ACCESS to Data Science in Agriculture project.</p>
+      </div>
+      <ol class="timeline" aria-label="Path">
+        <li><b>Africa</b><span>Grew up in smallholder farming communities</span></li>
+        <li><b>Rwanda Institute for Conservation Agriculture</b><span>B.Sc., Conservation Agriculture</span></li>
+        <li><b>Agirite, Agriterra, FAO</b><span>Cooperatives, youth and water management</span></li>
+        <li><b>University of Nebraska–Lincoln</b><span>M.S. since July 2025, thesis on trust and AI readiness</span></li>
+      </ol>
+    </div>
+  </section>
 
-    // Scroll-reveal
-    const revealEls = document.querySelectorAll(
-      '.timeline-entry, .award-card, .edu-card, .research-main, .interest-card, .about-grid'
-    );
-    const io = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      }),
-      { threshold: 0.08 }
-    );
-    revealEls.forEach(el => io.observe(el));
-  </script>
+  <section id="research" class="rise">
+    <div class="sec-head"><h2>Research</h2></div>
+    <div class="cards">
+      <article class="card">
+        <span class="pill">Thesis</span>
+        <h3>Trust and AI readiness</h3>
+        <p>How producers and agriculture students in the Midwest perceive AI-enabled tools, how much they trust them, and how ready they feel to use them. Built on the Technology Acceptance Model and Diffusion of Innovations.</p>
+        <p>Data collection is ongoing, so no findings are reported yet.</p>
+      </article>
+      <article class="card">
+        <span class="pill">Field research</span>
+        <h3>Sensor-based irrigation</h3>
+        <p>Soil moisture sensing and irrigation decisions on 15 small urban farms in Lincoln and Omaha.</p>
+      </article>
+      <article class="card">
+        <span class="pill">Prototype</span>
+        <h3>AgiriteChat</h3>
+        <p>A multilingual advisory assistant giving farmers plain-language guidance for Nebraska and East Africa. It has not yet been tested with farmers.</p>
+        <p><a href="https://agiritechat.streamlit.app">Open the prototype</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="speaking" class="rise">
+    <div class="sec-head"><h2>Speaking</h2><a class="btn ghost" href="#contact">Invite me to speak</a></div>
+    <div class="cards">
+      <article class="card"><span class="pill">Talk</span><h3>Why farmers trust or reject AI</h3><p>What adoption research and fieldwork show about trust, and what tool builders can do about it.</p></article>
+      <article class="card"><span class="pill">Talk</span><h3>The future of work in an AI-transformed world</h3><p>Drawn from my panels at the PRAIRIE Initiative launch and the NU System Graduate College workshop.</p></article>
+      <article class="card"><span class="pill">Talk</span><h3>Responsible AI in education and agriculture</h3><p>Shared language for using AI responsibly, from my co-authored PRAIRIE white paper.</p></article>
+    </div>
+  </section>
+
+  <section id="photos" class="rise">
+    <div class="sec-head"><h2>In the field, on stage and in the lab</h2></div>
+    <div class="gal" id="gal"></div>
+    <p class="hint"><button class="chip" id="more" type="button" aria-expanded="false">Show all photos</button></p>
+  </section>
+
+  <section id="cv" class="rise">
+    <div class="sec-head">
+      <h2>CV</h2>
+      <a class="btn" href="assets/Jean_Claude_Niyomugabo_CV.pdf">Download full CV (PDF)</a>
+    </div>
+    <div class="chips" role="tablist" aria-label="CV sections">
+      <button class="chip" type="button" role="tab" id="t-exp" data-t="exp" aria-selected="true" aria-controls="p-exp">Experience</button>
+      <button class="chip" type="button" role="tab" id="t-edu" data-t="edu" aria-selected="false" aria-controls="p-edu">Education</button>
+      <button class="chip" type="button" role="tab" id="t-pub" data-t="pub" aria-selected="false" aria-controls="p-pub">Publications and talks</button>
+      <button class="chip" type="button" role="tab" id="t-hon" data-t="hon" aria-selected="false" aria-controls="p-hon">Honors and service</button>
+      <button class="chip" type="button" role="tab" id="t-skl" data-t="skl" aria-selected="false" aria-controls="p-skl">Skills</button>
+    </div>
+    <div class="panel" id="p-exp" role="tabpanel" aria-labelledby="t-exp"><h3>Research</h3><div class="ent"><div class="et"><div><b>Researcher, Agricultural Water Management and Sensor-Based Irrigation</b>, University of Nebraska–Lincoln</div><span class="ed">2026 – Present</span></div><ul><li>Conduct field research on 15 small urban farms (10 in Lincoln, 5 in Omaha) evaluating irrigation practices, water-use efficiency, crop productivity, and farm profitability under resource constraints comparable to those facing smallholder systems.</li><li>Contribute to installation and monitoring of 60 soil-moisture sensors recording about every 15 minutes through the growing season; support instrumentation, data-quality checks, and farmer engagement.</li><li>Link high-frequency field data to irrigation timing, farmer decision-making, and adoption of accessible, climate-adaptive water-management technologies.</li></ul></div><div class="ent"><div class="et"><div><b>Graduate Research Assistant, Cultivate ACCESS to Data Science in Agriculture (USDA-NIFA)</b>, University of Nebraska–Lincoln</div><span class="ed">Aug 2025 – Present</span></div><ul><li>Lead the design of an IRB-approved, cross-sectional research study grounded in the Technology Acceptance Model and Diffusion of Innovations, measuring trust, perceived usefulness, compatibility, data concerns, training needs, and willingness to pay among farmers and next-generation producers. Data collection is ongoing.</li><li>Designed a multi-state recruitment strategy targeting up to 600 farmers and agriculture students across 11 Midwestern states, with protocols to reduce fraudulent responses and protect participant privacy.</li><li>Clean, manage, and analyze quantitative and qualitative data in R, Stata, Minitab, and Python, computing descriptive and inferential statistics to assess drivers of technology adoption.</li><li>Contribute to extension materials for farmers, students, and extension professionals; mentor high school students in a USDA-funded pathway program connecting data science to agriculture.</li></ul></div><div class="ent"><div class="et"><div><b>Founder and Research Developer, AgiriteChat</b></div><span class="ed">2026 – Present</span></div><ul><li>Built an agentic AI agricultural assistant with retrieval-based knowledge for Nebraska and East Africa, voice input, and live weather data (LangGraph, Streamlit, Llama 3.3 70B). The prototype has not yet been tested with farmers; I use it as a research testbed for localization, transparency, and farmer trust.</li></ul></div><div class="ent"><div class="et"><div><b>Student Advisor on Responsible AI Use, PRAIRIE Initiative</b>, UNL College of Engineering</div><span class="ed">Jan 2026 – Present</span></div><ul><li>Co-authored a multilevel framework for responsible AI integration in engineering education, informed by qualitative sentiment analysis of students, faculty, and industry partners.</li></ul></div><h3>Field and professional</h3><div class="ent"><div class="et"><div><b>Cooperative and Business Development Advisor</b>, Agriterra, Kigali</div><span class="ed">Jan 2024 – Jul 2025</span></div><ul><li>Advised 40 maize, soybean, rice, and potato cooperatives on technology adoption, mechanization, irrigation, water management, productivity, and youth participation.</li><li>Coordinated demonstrations of tractors, center-pivot, drip, and flood irrigation, rainwater harvesting, and wastewater reuse; connected 200 farmers with mechanization providers.</li><li>Coordinated training for 15 cooperative leaders in communication and business development, strengthening partnerships with the Netherlands Ministry of Foreign Affairs and private-sector donors.</li></ul></div><div class="ent"><div class="et"><div><b>Urban Agriculture Assistant</b>, FAO, Kigali</div><span class="ed">Jan – Dec 2023</span></div><ul><li>Supported applied work at a UN FAO demonstration farm on high-value crops, hydroponics, automated drip irrigation, and wastewater reuse; contributed to data collection on smallholder beekeeping practices.</li><li>Delivered four youth trainings on water management, wastewater reuse, hydroponics, and efficient irrigation; trainees later secured a UNDP grant for a hydroponic greenhouse.</li></ul></div><div class="ent"><div class="et"><div><b>Co-Founder</b>, Agirite, Kigali</div><span class="ed">Aug 2021 – Jul 2025</span></div><ul><li>Led a social enterprise translating research and field experience into practical knowledge for farmers and young people. Trained over 3,000 young farmers on mechanized and sustainable agriculture with Hello Tractor; led the Buy from Youth market-linkage campaigns (2022–2024), connecting 200+ young farmers with urban markets.</li></ul></div><div class="ent"><div class="et"><div><b>Urban Farming and Sustainability Intern</b>, Eza Neza</div><span class="ed">Jan – Jul 2023</span></div><ul><li>Managed automated irrigation across four hydroponic greenhouses at a commercial strawberry operation; completed a capstone evaluating vertical and horizontal hydroponic yield.</li></ul></div><h3>Teaching and mentoring</h3><div class="ent"><div class="et"><div><b>Teaching Assistant, AGST/BSEN 416/816 Sensors and Control Systems</b>, University of Nebraska–Lincoln</div><span class="ed">Fall 2026</span></div></div><div class="ent"><div class="et"><div><b>Cultivate Access Ambassador</b>, RICA and University of Nebraska–Lincoln</div><span class="ed">Jan 2022 – Jan 2023</span></div><ul><li>Mentored 50 high school students pursuing agriculture in university.</li></ul></div><div class="ent"><div class="et"><div><b>Undergraduate Teaching Assistant, Biology</b>, RICA</div><span class="ed">Sept – Dec 2021</span></div><ul><li>Assisted 84 students with coursework, laboratory sessions, grading, and tutoring.</li></ul></div></div>
+    <div class="panel" id="p-edu" role="tabpanel" aria-labelledby="t-edu" hidden><div class="ent"><div class="et"><div><b>University of Nebraska–Lincoln</b>, Lincoln, NE</div><span class="ed">Expected May 2027</span></div><p class="ex">M.S., Biological Systems Engineering, Agricultural Systems Technology (Thesis Option) | CGPA 3.826/4.00</p></div><p class="ex"><i>Thesis:</i> Perceptions, Trust, and AI Readiness for AI-Enabled Agricultural Tools: A Cross-Sectional Study of Agricultural Producers and Students in the U.S. Midwest</p><p class="ex"><i>Advisor:</i> Dr. Santosh K. Pitla | <i>Committee:</i> Dr. Deepak Keshwani, Dr. Heather Akin, Dr. Guillermo R. Balboa</p><p class="ex"><i>Relevant coursework:</i> Statistical Methods for Research (R and SAS); Research Methods in Leadership Education; Agentic AI for Workflow Automation; Resilience Design in Agriculture; Irrigation Laboratory and Field Course</p><div class="ent"><div class="et"><div><b>Rwanda Institute for Conservation Agriculture (RICA)</b>, Bugesera</div><span class="ed">August 2023</span></div><p class="ex">B.Sc., Conservation Agriculture, specialization in Irrigation and Mechanized Agriculture | CGPA 3.37/4.00, Second-Class Honors (Upper Division); Howard G. Buffett Foundation Scholarship</p></div><p class="ex"><i>Capstone:</i> Evaluating Strawberry Yield in Vertical and Horizontal Hydroponic Farming Systems</p><p class="ex"><i>Relevant coursework:</i> Introduction to Agricultural Economics and Business; Intermediate Agricultural Business; Agricultural Business Planning; Enterprises and Marketing; Practical Mathematics for Agriculture; Applied Agriculture Research Methods; Agriculture and Environmental Physics; Site Specific Crop Management</p></div>
+    <div class="panel" id="p-pub" role="tabpanel" aria-labelledby="t-pub" hidden><h3>Publications</h3><div class="ent"><div class="et"><div><b>Shared language for responsible AI integration: A framework for responsible AI use in engineering education</b>, White paper, UNL Digital Commons</div><span class="ed">2026</span></div><p class="ex">Stone, A. B., Stone, M. C., Bevins, A., Niyomugabo, J. C., Magara, I., Abaare, J., Heeren, D. M., &amp; Abu Zouriq, M. <a href="https://digitalcommons.unl.edu/prairie-ai/2">Read the paper</a></p></div><h3>Presentations</h3><div class="ent"><div class="et"><div><b>Perceptions, trust, and AI readiness influencing adoption of AI-enabled agricultural tools among early adopters and next-generation producers in the U.S. Midwest</b>, Poster, ASABE Annual International Meeting</div><span class="ed">July 2026</span></div></div><div class="ent"><div class="et"><div><b>Student poster, Heartland AI Symposium</b>, Kansas State University, Manhattan, Kansas</div><span class="ed">Nov 10–12, 2026</span></div><p class="ex">Also panelist, Multi-Institutional Student Panel, November 12.</p></div><div class="ent"><div class="et"><div><b>Student poster, Spur AgConverge</b>, Grand Island, Nebraska</div><span class="ed">Nov 17–18, 2026</span></div></div><h3>Invited panels</h3><div class="ent"><div class="et"><div><b>Invited panelist, Challenges and Opportunities in an AI-Transformed World</b>, University of Nebraska System Graduate College Workshop, NU AI Institute</div><span class="ed">April 2026</span></div></div><div class="ent"><div class="et"><div><b>Invited panelist, The Future of Work in an AI-Transformed World</b>, PRAIRIE Initiative launch event, UNL College of Engineering</div><span class="ed">Feb 2026</span></div></div></div>
+    <div class="panel" id="p-hon" role="tabpanel" aria-labelledby="t-hon" hidden><h3>Fellowships and honors</h3><ul class="plain2"><li>Google Data Center Community AI Fellow, Watson Institute (2026)</li><li>Emerging Leaders in AI, Black in AI (2026–2027)</li><li>Bayer University Mentoring Program (2026)</li><li>Global Greengrants Fund Award, $5,000 (2024)</li><li>Rural Fellow, Rural Prosperity Nebraska (2021)</li><li>Millennium Fellow, United Nations Academic Impact (2020)</li><li>Best African Young Achiever, Agribusiness, Young Achievers Africa Awards (2024/2025)</li><li>Youth AgriChampion Award, Ban Ki-moon Centre for Global Citizens (2022)</li></ul><h3>Service</h3><ul class="plain2"><li>Reviewer, ASABE journals (2026–present)</li><li>Global Youth Representative, World Food Forum (2023–present)</li><li>Member, UN Committee on World Food Security Data Policy group (2023–present)</li><li>Steering Committee, EKYAN, UNICEF Generation Unlimited (2024–present)</li></ul></div>
+    <div class="panel" id="p-skl" role="tabpanel" aria-labelledby="t-skl" hidden><h3>Statistics and data</h3><p>R, Stata, SAS, Minitab, Python; descriptive and inferential statistics; ANOVA; Qualtrics; mixed methods; field data collection</p><h3>Research and tools</h3><p>IRB/CITI human subjects research; Technology Acceptance Model; Diffusion of Innovations; LangGraph, Streamlit, retrieval-augmented generation</p><h3>Languages</h3><p>Kinyarwanda (native), English (fluent), French (intermediate)</p></div>
+  </section>
+
+  <section id="contact" class="rise" style="padding-bottom:0">
+    <div class="contact">
+      <div>
+        <h2>Let's work together</h2>
+        <p style="margin:0;color:var(--muted);max-width:42ch">I am looking for industry roles in digital agriculture, agricultural AI research, and farmer-facing product and advisory work, and I am also open to PhD programs. Researchers, hiring managers and collaborators are welcome to write.</p>
+      </div>
+      <div>
+        <div class="mail"><code id="em">jniyomugabo2@huskers.unl.edu</code><button class="btn ghost" id="copy" type="button">Copy email</button></div>
+        <p style="margin:10px 0 0"><a href="https://www.linkedin.com/in/jcniyomugabo">linkedin.com/in/jcniyomugabo</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">&copy; 2026 Jean Claude Niyomugabo. Lincoln, Nebraska.</div></footer>
+
+<script>
+(function(){
+  var IMG={};
+  function src(n){return IMG[n]||"assets/photos/"+n+".jpg";}
+  var G=[
+    {n:"field",s:"Urban farm fieldwork",c:"Collecting irrigation sensor data on an urban farm in Nebraska"},
+    {n:"asabe",s:"ASABE research poster",c:"Presenting my research poster at the ASABE Annual International Meeting"},
+    {n:"youthconnekt",s:"Youth Connekt Africa Summit 2024",c:"Speaking at the Youth Connekt Africa Summit 2024"},
+    {n:"afsf",s:"Africa Food Systems Forum 2024",c:"Speaking on a panel at the Africa Food Systems Forum 2024"},
+    {n:"undp",s:"UNDP panel discussion",c:"Panelist at a session hosted by UNDP"},
+    {n:"fao",s:"At FAO headquarters",c:"At the headquarters of the Food and Agriculture Organization"},
+    {n:"award",s:"Young Achievers Africa Awards 2025",c:"Young Achievers Africa Awards 2025"},
+    {n:"ayute",s:"AYuTe NextGen panel",c:"Panelist at AYuTe NextGen, an initiative of Heifer International"},
+    {n:"visitors",s:"Presenting to visitors",c:"Presenting to international visitors"},
+    {n:"drone",s:"Drone technology event",c:"Exploring drone technology at a digital agriculture event"},
+    {n:"strawberry",s:"Vertical growing system",c:"Hands-on with a vertical growing system"},
+    {n:"graduation",s:"B.Sc. commencement",c:"B.Sc. commencement, RICA"}
+  ];
+  var SHOW=6;
+  document.getElementById("portrait").src=src("portrait");
+  var gal=document.getElementById("gal");
+  G.forEach(function(g,i){
+    var d=document.createElement("div");d.className="photo";d.tabIndex=0;d.setAttribute("role","button");d.setAttribute("aria-label",g.c);
+    if(i>=SHOW)d.hidden=true;
+    var im=document.createElement("img");im.src=src(g.n);im.alt=g.c;im.loading="lazy";
+    var t=document.createElement("span");t.className="tag";t.textContent=g.s;
+    d.appendChild(im);d.appendChild(t);gal.appendChild(d);
+    function open(){var lb=document.createElement("div");lb.className="lb";lb.innerHTML='<figure style="margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:10px"><img alt="" style="max-height:80vh"><figcaption style="color:#fff;font-size:.95rem;text-align:center"></figcaption></figure><button type="button">Close</button>';lb.querySelector("figcaption").textContent=g.c;
+      lb.querySelector("img").src=im.src;lb.querySelector("img").alt=g.c;
+      function close(){lb.remove();document.removeEventListener("keydown",k)}
+      function k(e){if(e.key==="Escape")close()}
+      lb.addEventListener("click",close);document.addEventListener("keydown",k);document.body.appendChild(lb);lb.querySelector("button").focus();}
+    d.addEventListener("click",open);d.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}});
+  });
+  var more=document.getElementById("more"),expanded=false;
+  more.addEventListener("click",function(){
+    expanded=!expanded;
+    gal.querySelectorAll(".photo").forEach(function(p,i){if(i>=SHOW)p.hidden=!expanded});
+    more.textContent=expanded?"Show fewer photos":"Show all photos";more.setAttribute("aria-expanded",expanded);
+  });
+
+  var root=document.documentElement,tb=document.getElementById("theme");
+  tb.addEventListener("click",function(){
+    var dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme=dark?"light":"dark";
+  });
+  var tabs=document.querySelectorAll(".chip[data-t]");
+  tabs.forEach(function(c,i){
+    c.addEventListener("click",function(){
+      tabs.forEach(function(x){var on=x===c;x.setAttribute("aria-selected",on);document.getElementById("p-"+x.dataset.t).hidden=!on});
+    });
+    c.addEventListener("keydown",function(e){
+      if(e.key==="ArrowRight"||e.key==="ArrowLeft"){var n=tabs[(i+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length];n.focus();n.click();}
+    });
+  });
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    var t=document.getElementById("em").textContent;
+    function done(){cb.textContent="Copied";setTimeout(function(){cb.textContent="Copy email"},1600)}
+    function fb(){var r=document.createRange();r.selectNodeContents(document.getElementById("em"));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent="Press Ctrl+C";}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fb)}else fb();
+  });
+  var rises=document.querySelectorAll(".rise");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.08});
+    rises.forEach(function(r){io.observe(r)});
+    var links=document.querySelectorAll("nav a");
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"});
+    document.querySelectorAll("section[id]").forEach(function(s){so.observe(s)});
+  }else rises.forEach(function(r){r.classList.add("in")});
+})();
+</script>
+
 </body>
 </html>
